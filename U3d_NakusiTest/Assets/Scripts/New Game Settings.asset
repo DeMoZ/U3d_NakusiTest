@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcf5f5aa1eca4ca78e5bfc071c969875, type: 3}
+  m_Name: New Game Settings
+  m_EditorClassIdentifier: 
+  FloorExtents: {x: 7.5, y: 0.05, z: 7.5}
+  WallsSettings:
+    MaxAmount: 5
+    MaxWidth: 4
+  CharactersSettings:
+    MaxAmount: 3
+    SpawnDalay: 3
+    SpawnInterval: 0.5
+    Types:
+    - {fileID: 5656739141652547822, guid: 058d3009e7ef43c49b296bff42762a3b, type: 3}
+    - {fileID: 5547928693439657416, guid: 6b05de961ef846148b46f6fd4364e7b1, type: 3}
+    - {fileID: 6746323445062434480, guid: 161bace9fdc092b42af7cd683de0af29, type: 3}
+  BombsSettings:
+    MaxAmount: 7
+    SpawnDalay: 2
+    SpawnInterval: 1
+    Types:
+    - {fileID: 8026346666296314038, guid: 9443467aa18670c45a8e773574e5d010, type: 3}
+    RandomSizeRange: {x: 0.1, y: 1}
