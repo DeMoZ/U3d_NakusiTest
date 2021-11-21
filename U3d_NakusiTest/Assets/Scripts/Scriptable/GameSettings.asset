@@ -14,8 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FloorExtents: {x: 7.5, y: 0.05, z: 7.5}
   WallsSettings:
-    MaxAmount: 5
+    MaxAmount: 15
     MaxWidth: 4
+    SpawnDalay: 0
+    SpawnInterval: 0.2
+    Types:
+    - {fileID: 999640755869838639, guid: 1dca4d5786ed08e4ca5aec5c5bc4d8fe, type: 3}
   CharactersSettings:
     MaxAmount: 3
     SpawnDalay: 3

@@ -14,6 +14,9 @@ public class WallsSettings
 {
     public int MaxAmount = 5;
     public float MaxWidth = 4;
+    public float SpawnDalay = 0f;
+    public float SpawnInterval = 0.2f;
+    public GameObject[] Types;
 }
 
 [System.Serializable]

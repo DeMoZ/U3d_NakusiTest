@@ -16,7 +16,7 @@ public class Calculations
 
     public static bool IsOverlaping(Vector3 center, float radius)
     {
-        var hitColliders = new Collider[10];
+        var hitColliders = new Collider[Constants.NonAllocColliderAmount];
         Physics.OverlapSphereNonAlloc(center, radius, hitColliders);
 
         foreach (var c in hitColliders)

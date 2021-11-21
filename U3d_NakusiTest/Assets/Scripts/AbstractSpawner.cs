@@ -14,17 +14,6 @@ public abstract class AbstractSpawner
     protected GameObject[] _types;
     protected float _spawnInterval;
 
-    protected GameObject SpawnRandomObject(Vector3 floorExtents, GameObject[] objects)
-    {
-        var goPrefab = objects[Random.Range(0, objects.Length)];
-        var goRadius = goPrefab.GetComponent<Renderer>().bounds.extents.x;
-        var position = Calculations.FindPosition(floorExtents, goRadius);
-        var gameObject = _pool.Get(goPrefab,position, Quaternion.identity);
-        gameObject.name = goPrefab.name;
-        
-        return gameObject;
-    }
-
     public void Spawn() =>
         _owner.StartCoroutine(IESpawn());
 
@@ -47,6 +36,17 @@ public abstract class AbstractSpawner
 
             yield return null;
         }
+    }
+
+    protected GameObject SpawnRandomObject(Vector3 floorExtents, GameObject[] objects)
+    {
+        var goPrefab = objects[Random.Range(0, objects.Length)];
+        var goRadius = goPrefab.GetComponent<Renderer>().bounds.extents.x;
+        var position = Calculations.FindPosition(floorExtents, goRadius);
+        var gameObject = _pool.Get(goPrefab,position, Quaternion.identity);
+        gameObject.name = goPrefab.name;
+        
+        return gameObject;
     }
 
     protected abstract void OnObjectSpawn(GameObject gameObject);

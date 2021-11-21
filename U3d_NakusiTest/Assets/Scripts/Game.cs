@@ -12,8 +12,7 @@ public class Game : MonoBehaviour
         var pool = new Pool();
 
         var wallSpawner = new WallSpawner(this, pool, _settings.WallsSettings, _settings.FloorExtents);
-        var characterSpawner =
-            new CharacterSpawner(this, pool, _settings.CharactersSettings, _settings.FloorExtents);
+        var characterSpawner = new CharacterSpawner(this, pool, _settings.CharactersSettings, _settings.FloorExtents);
         var bombSpawner = new BombSpawner(this, pool, _settings.BombsSettings, _settings.FloorExtents);
 
         wallSpawner.Spawn();

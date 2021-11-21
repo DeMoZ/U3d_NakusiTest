@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEditor.AssetImporters;
 using UnityEngine;
 
 public class Bomb : MonoBehaviour
@@ -20,11 +21,25 @@ public class Bomb : MonoBehaviour
 
         foreach (var go in overlapedObjects)
         {
-            if(go.TryGetComponent(out Character c)) 
+            if (BehindWall(go))
+                continue;
+            
+            if (go.TryGetComponent(out Character c)) 
                 c.SetDamage(_bombSettings.Damage);
         }
         
         Kill();
+    }
+
+    private bool BehindWall(GameObject go)
+    {
+        RaycastHit hit
+            ;
+        if (Physics.Raycast(transform.position, go.transform.position, out hit))
+            if (hit.transform.TryGetComponent(out Wall w))
+                return true;
+
+        return false;
     }
 
     private List<GameObject> CollectOverlapedObjects()
