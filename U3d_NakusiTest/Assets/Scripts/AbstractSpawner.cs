@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class AbstractSpawner
 {
     protected MonoBehaviour _owner;
+    protected Pool _pool;
     protected Vector3 _floorExtents;
     protected float _spawnTimer;
     protected List<GameObject> _objects;
@@ -18,9 +19,9 @@ public abstract class AbstractSpawner
         var goPrefab = objects[Random.Range(0, objects.Length)];
         var goRadius = goPrefab.GetComponent<Renderer>().bounds.extents.x;
         var position = Calculations.FindPosition(floorExtents, goRadius);
-
-        var gameObject = GameObject.Instantiate(goPrefab, position, Quaternion.identity);
-
+        var gameObject = _pool.Get(goPrefab,position, Quaternion.identity);
+        gameObject.name = goPrefab.name;
+        
         return gameObject;
     }
 

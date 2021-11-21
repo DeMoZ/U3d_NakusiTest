@@ -5,7 +5,8 @@ using UnityEngine;
 public class Bomb : MonoBehaviour
 {
     [SerializeField] private BombSettings _bombSettings = default;
-
+    
+    private Pool _pool;
     private Action<GameObject> _onBoom;
     public void Init(Action<GameObject> onBoom)
     {
@@ -45,6 +46,5 @@ public class Bomb : MonoBehaviour
     {
         _onBoom?.Invoke(gameObject);
         _onBoom = null;
-        Destroy(gameObject);
     }
 }

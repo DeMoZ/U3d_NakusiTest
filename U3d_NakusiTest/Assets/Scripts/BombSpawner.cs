@@ -1,14 +1,14 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BombSpawner: AbstractSpawner
+public class BombSpawner : AbstractSpawner
 {
     private BombsSettings _settings;
 
-    public BombSpawner(Game owner, BombsSettings settings, Vector3 floorExtents)
+    public BombSpawner(Game owner, Pool pool, BombsSettings settings, Vector3 floorExtents)
     {
         _owner = owner;
+        _pool = pool;
         _settings = settings;
         _spawnTimer = 0;
         _floorExtents = floorExtents;
@@ -29,7 +29,7 @@ public class BombSpawner: AbstractSpawner
     private void OnBoom(GameObject gameObject)
     {
         // send camera shake event
-
+        _pool.Return(gameObject);
         _objects.Remove(gameObject);
     }
 }

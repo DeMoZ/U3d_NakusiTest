@@ -30,6 +30,5 @@ public class Character : MonoBehaviour
     {
         _onKill?.Invoke(gameObject);
         _onKill = null;
-        Destroy(gameObject);
     }
 }

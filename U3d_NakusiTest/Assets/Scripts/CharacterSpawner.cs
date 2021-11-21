@@ -4,10 +4,10 @@ using UnityEngine;
 public class CharacterSpawner : AbstractSpawner
 {
     private CharactersSettings _settings;
-
-    public CharacterSpawner(MonoBehaviour owner, CharactersSettings settings, Vector3 floorExtents)
+    public CharacterSpawner(MonoBehaviour owner, Pool pool, CharactersSettings settings, Vector3 floorExtents)
     {
         _owner = owner;
+        _pool = pool;
         _settings = settings;
         _spawnTimer = 0;
         _floorExtents = floorExtents;
@@ -27,6 +27,7 @@ public class CharacterSpawner : AbstractSpawner
 
     private void OnKill(GameObject gameObject)
     {
+        _pool.Return(gameObject);
         _objects.Remove(gameObject);
     }
 }

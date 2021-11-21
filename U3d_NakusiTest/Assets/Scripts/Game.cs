@@ -9,10 +9,12 @@ public class Game : MonoBehaviour
     {
         _floor.localScale = _settings.FloorExtents;
 
-        var wallSpawner = new WallSpawner(this, _settings.WallsSettings, _settings.FloorExtents);
+        var pool = new Pool();
+
+        var wallSpawner = new WallSpawner(this, pool, _settings.WallsSettings, _settings.FloorExtents);
         var characterSpawner =
-            new CharacterSpawner(this, _settings.CharactersSettings, _settings.FloorExtents);
-        var bombSpawner = new BombSpawner(this, _settings.BombsSettings, _settings.FloorExtents);
+            new CharacterSpawner(this, pool, _settings.CharactersSettings, _settings.FloorExtents);
+        var bombSpawner = new BombSpawner(this, pool, _settings.BombsSettings, _settings.FloorExtents);
 
         wallSpawner.Spawn();
         characterSpawner.Spawn();
