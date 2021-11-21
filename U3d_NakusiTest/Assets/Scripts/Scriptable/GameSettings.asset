@@ -34,4 +34,5 @@ MonoBehaviour:
     SpawnInterval: 1
     Types:
     - {fileID: 8026346666296314038, guid: 9443467aa18670c45a8e773574e5d010, type: 3}
+    - {fileID: 8026346666296314038, guid: 6c854a31c7da24c4cba93e07695bf359, type: 3}
     RandomSizeRange: {x: 0.1, y: 1}
