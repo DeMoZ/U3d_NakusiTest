@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 82809fa211d2446b9030bf2c8a9fbd42, type: 3}
-  m_Name: New Character Settings
+  m_Name: CharacterCapsule
   m_EditorClassIdentifier: 
-  Health: 10
+  Health: 15
