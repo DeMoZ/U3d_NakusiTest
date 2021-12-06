@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using Unity.Mathematics;
+using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Calculations
 {
@@ -26,5 +28,19 @@ public class Calculations
         }
 
         return false;
+    }
+
+    public static GameObject RandomPrefab(GameObject[] prefabs) =>
+        prefabs[Random.Range(0, prefabs.Length)];
+
+    public static float3 RandomPosition(
+        (int min, int max) xRange,
+        (int min, int max) yRange, 
+        (int min, int max) zRange)
+    {
+        return new float3(
+            Random.Range(xRange.min,xRange.max),
+            Random.Range(yRange.min,yRange.max),
+            Random.Range(zRange.min,zRange.max));
     }
 }

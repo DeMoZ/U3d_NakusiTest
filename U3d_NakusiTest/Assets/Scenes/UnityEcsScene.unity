@@ -338,6 +338,7 @@ GameObject:
   m_Component:
   - component: {fileID: 830550650}
   - component: {fileID: 830550651}
+  - component: {fileID: 830550652}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -366,7 +367,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 830550649}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4257557a910b45f5ac50d49334a22ef3, type: 3}
   m_Name: 
@@ -375,6 +376,29 @@ MonoBehaviour:
   - {fileID: 9217138581895798349, guid: efce787b37f48a546b1ecee55206420f, type: 3}
   countX: 100
   countY: 100
+--- !u!114 &830550652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830550649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fe42ef2630041adbbac765f0c8466c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _settings: {fileID: 0}
+  _floor: {fileID: 0}
+  botMonoBehSpawnerPrefab: {fileID: 8072143587046048160, guid: 0bbf6f263ed77404cabcf60c9515ae8b, type: 3}
+  bombMonoBehSpawnerPrefab: {fileID: -1762837765183326488, guid: 7fdaaac84ec25a448af69f63e56418b4, type: 3}
+  wallMonoBehSpawnerPrefab: {fileID: 0}
+  _botPrefabs:
+  - {fileID: 9217138581895798349, guid: efce787b37f48a546b1ecee55206420f, type: 3}
+  - {fileID: 9217138581895798349, guid: efce787b37f48a546b1ecee55206420f, type: 3}
+  _bombPrefabs:
+  - {fileID: 8026346666296314038, guid: 4ef145123eaa27148b433e2f12eb5f0b, type: 3}
+  - {fileID: 8026346666296314038, guid: c19d668ac00c0e749a1ad2934fb97131, type: 3}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,6 +17,8 @@ namespace UnityEcs
             var entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
             var settings = GameObjectConversionSettings.FromWorld(World.DefaultGameObjectInjectionWorld, null);
 
+            var magnitude = math.sqrt(countX * countX + countY * countY);
+            
             for (var x = 0; x < countX; x++)
             {
                 for (var y = 0; y < countY; y++)
@@ -25,8 +27,8 @@ namespace UnityEcs
                         GameObjectConversionUtility.ConvertGameObjectHierarchy(RandomPrefab(_prefabs), settings);
                     var instance = entityManager.Instantiate(prefab);
                     var position = transform.TransformPoint(new float3(x * 1.3f,
-                        //0, 
-                        noise.cnoise(new float2(x, y) * 0.21f) * 2,
+                        //noise.cnoise(new float2(x, y) * 0.21f) * 2,
+                        math.sin(math.sqrt(x * x + y * y)/magnitude * 2 * math.PI)*30,
                         y * 1.3f));
 
                     entityManager.SetComponentData(instance, new Translation { Value = position });
