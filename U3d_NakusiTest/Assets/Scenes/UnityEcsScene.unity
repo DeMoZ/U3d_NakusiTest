@@ -142,7 +142,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &490149211
 Transform:
   m_ObjectHideFlags: 0
@@ -389,7 +389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _settings: {fileID: 0}
-  _floor: {fileID: 0}
+  _floor: {fileID: 490149211}
   botMonoBehSpawnerPrefab: {fileID: 8072143587046048160, guid: 0bbf6f263ed77404cabcf60c9515ae8b, type: 3}
   bombMonoBehSpawnerPrefab: {fileID: -1762837765183326488, guid: 7fdaaac84ec25a448af69f63e56418b4, type: 3}
   wallMonoBehSpawnerPrefab: {fileID: 0}

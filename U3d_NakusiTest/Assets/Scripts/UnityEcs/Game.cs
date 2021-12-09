@@ -19,16 +19,14 @@ namespace UnityEcs
         {
             //_floor.localScale = _settings.FloorExtents;
 
-            // _wallSpawner.Init(_settings.FloorExtents);
-            // _botSpawner.Init(_settings.FloorExtents);
-            // _bombSpawner.Init(_settings.FloorExtents);
-
             var botSpawner = Instantiate(botMonoBehSpawnerPrefab);
             var bombSpawner = Instantiate(bombMonoBehSpawnerPrefab);
             // var wallSpawner = Instantiate(wallMonoBehSpawnerPrefab);
 
-            botSpawner.Init(_botPrefabs);
-            bombSpawner.Init(_bombPrefabs);
+            var floorBounds = _floor.GetComponent<Renderer>().bounds;
+            
+            botSpawner.Init(_botPrefabs, floorBounds);
+            bombSpawner.Init(_bombPrefabs, floorBounds);
 
             botSpawner.Spawn();
             bombSpawner.Spawn();

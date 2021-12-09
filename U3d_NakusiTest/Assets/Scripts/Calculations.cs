@@ -35,12 +35,21 @@ public class Calculations
 
     public static float3 RandomPosition(
         (int min, int max) xRange,
-        (int min, int max) yRange, 
+        (int min, int max) yRange,
         (int min, int max) zRange)
     {
         return new float3(
-            Random.Range(xRange.min,xRange.max),
-            Random.Range(yRange.min,yRange.max),
-            Random.Range(zRange.min,zRange.max));
+            Random.Range(xRange.min, xRange.max),
+            Random.Range(yRange.min, yRange.max),
+            Random.Range(zRange.min, zRange.max));
+    }
+
+    public static float3 RandomPosition(Bounds bounds)
+    {
+        var center = bounds.center.x - bounds.extents.x;
+        return new float3(
+            Random.Range(bounds.center.x - bounds.extents.x, bounds.center.x + bounds.extents.x),
+            bounds.center.y + bounds.extents.y,
+            Random.Range(bounds.center.z - bounds.extents.z, bounds.center.z + bounds.extents.z));
     }
 }

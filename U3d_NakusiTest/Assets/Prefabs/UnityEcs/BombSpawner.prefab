@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b72e58f295664369807a4a402e25f996, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefabs:
+  _prefabss:
   - {fileID: 530572692528757279, guid: 4ef145123eaa27148b433e2f12eb5f0b, type: 3}
   - {fileID: 7447413630416978759, guid: c19d668ac00c0e749a1ad2934fb97131, type: 3}
   _count: 10
