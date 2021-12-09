@@ -16,12 +16,30 @@ namespace UnityEcs
 
             for (var i = 0; i < _count; i++)
             {
-                var prefab = GameObjectConversionUtility.ConvertGameObjectHierarchy( Calculations.RandomPrefab(_prefabs), settings);
-                var instance = entityManager.Instantiate(prefab);
-                var position = new float3(Calculations.RandomPosition((-10,10),(0,0),(-10,10)));
+                var entity = GameObjectConversionUtility.ConvertGameObjectHierarchy( Calculations.RandomPrefab(_prefabs), settings);
+        
+                var instance = entityManager.Instantiate(entity);
+                var position = new float3(Calculations.RandomPosition((-10, 10), (0, 0), (-10, 10)));
 
                 entityManager.SetComponentData(instance, new Translation { Value = position });
             }
+        }
+    }
+
+    public struct BotData : IComponentData
+    {
+        
+    }
+
+    [DisableAutoCreation]
+    public class BotLifeSystem : SystemBase
+    {
+        protected override void OnUpdate()
+        {
+            Entities.ForEach((Entity e, ref BotData botData) =>
+            {
+                
+            }).Run();
         }
     }
 }

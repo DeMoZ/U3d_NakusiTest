@@ -16,10 +16,14 @@ namespace UnityEcs
 
             for (var i = 0; i < _count; i++)
             {
-                var prefab = GameObjectConversionUtility.ConvertGameObjectHierarchy( Calculations.RandomPrefab(_prefabs), settings);
+                var prefab =
+                    GameObjectConversionUtility.ConvertGameObjectHierarchy(Calculations.RandomPrefab(_prefabs),
+                        settings);
                 var instance = entityManager.Instantiate(prefab);
-                var position = new float3(Calculations.RandomPosition((-10,10),(0,0),(-10,10)));
+                entityManager.AddComponentData(instance, new LifeTimeData { Value = 3f });
+                entityManager.AddComponentData(instance, new BombMarker());
 
+                var position = new float3(Calculations.RandomPosition((-10, 10), (0, 0), (-10, 10)));
                 entityManager.SetComponentData(instance, new Translation { Value = position });
             }
         }

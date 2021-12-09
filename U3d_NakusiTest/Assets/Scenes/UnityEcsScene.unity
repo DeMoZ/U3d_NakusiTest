@@ -395,7 +395,7 @@ MonoBehaviour:
   wallMonoBehSpawnerPrefab: {fileID: 0}
   _botPrefabs:
   - {fileID: 9217138581895798349, guid: efce787b37f48a546b1ecee55206420f, type: 3}
-  - {fileID: 9217138581895798349, guid: efce787b37f48a546b1ecee55206420f, type: 3}
+  - {fileID: 2680447964568102539, guid: 0c4aa845c2258714bb16c0307a5a3b81, type: 3}
   _bombPrefabs:
   - {fileID: 8026346666296314038, guid: 4ef145123eaa27148b433e2f12eb5f0b, type: 3}
   - {fileID: 8026346666296314038, guid: c19d668ac00c0e749a1ad2934fb97131, type: 3}
