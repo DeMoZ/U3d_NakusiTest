@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6793479343021336175}
   - component: {fileID: 462616479581820001}
   - component: {fileID: -5387300795027647248}
-  - component: {fileID: 530572692528757279}
+  - component: {fileID: -4881456580067463167}
   m_Layer: 0
   m_Name: BombSphereEcs
   m_TagString: Untagged
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ConversionMode: 0
---- !u!114 &530572692528757279
+--- !u!114 &-4881456580067463167
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -136,7 +136,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8026346666296314038}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 908962de69234057bc657b342e17eca5, type: 3}
+  m_Script: {fileID: 11500000, guid: c636ba3ce3b447678e12851814e9fd73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bombSettings: {fileID: 11400000, guid: cfdba02147c5e1a47bb36573acffc468, type: 2}
+  Value: 4

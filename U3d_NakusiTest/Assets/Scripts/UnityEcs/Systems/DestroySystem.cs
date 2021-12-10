@@ -19,20 +19,13 @@ namespace UnityEcs
             //to run our jobs in parallel
             var commandBuffer = _endSimCMB.CreateCommandBuffer().AsParallelWriter();
 
-            //We now any entities with a DestroyTag and an AsteroidTag
-            //We could just query for a DestroyTag, but we might want to run different processes
-            //if different entities are destroyed, so we made this one specifically for Asteroids
             Entities
-                .WithAll<BombTag, LifeTimeData>()
-                .ForEach((Entity entity, int nativeThreadIndex, ref LifeTimeData lifeTimeData) =>
+                .WithAll<DestroyTag>()
+                .ForEach((Entity entity, int nativeThreadIndex) =>
                 {
-                    if (lifeTimeData.Value <= 0)
-
-                        commandBuffer.DestroyEntity(nativeThreadIndex, entity);
+                    commandBuffer.DestroyEntity(nativeThreadIndex, entity);
                 }).ScheduleParallel();
 
-            //We then add the dependencies of these jobs to the EndSimulationEntityCOmmandBufferSystem
-            //that will be playing back the structural changes recorded in this sytem
             _endSimCMB.AddJobHandleForProducer(Dependency);
         }
     }

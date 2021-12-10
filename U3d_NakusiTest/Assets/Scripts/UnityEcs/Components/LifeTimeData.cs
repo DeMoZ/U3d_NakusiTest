@@ -1,9 +1,8 @@
 using Unity.Entities;
-using System;
 
 namespace UnityEcs
 {
-    [Serializable]
+    [GenerateAuthoringComponent]
     public struct LifeTimeData : IComponentData
     {
         public float Value;

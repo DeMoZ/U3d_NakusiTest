@@ -1,4 +1,5 @@
 ﻿using Unity.Entities;
+using UnityEngine;
 
 namespace UnityEcs
 {
@@ -25,7 +26,6 @@ namespace UnityEcs
 
                     if (lifeTimeData.Value <= 0)
                     {
-                       // commandBuffer.RemoveComponent(nativeThreadIndex, entity, typeof(LifeTimeData));
                         commandBuffer.AddComponent(nativeThreadIndex, entity, new DestroyTag());
                     }
                 }).ScheduleParallel();

@@ -8,10 +8,10 @@ namespace UnityEcs
     public class BotMonoBehSpawner
     {
         private int _count;
-        private BotEcs[] _prefabs;
+        private GameObject[] _prefabs;
         private Bounds _floorBounds;
 
-        public BotMonoBehSpawner(BotEcs[] prefabs, Bounds floorBounds, int count)
+        public BotMonoBehSpawner(GameObject[] prefabs, Bounds floorBounds, int count)
         {
             _prefabs = prefabs;
             _floorBounds = floorBounds;
@@ -25,10 +25,9 @@ namespace UnityEcs
 
             for (var i = 0; i < _count; i++)
             {
-                var bot = _prefabs[Random.Range(0, _prefabs.Length)];
-                var prefab = GameObjectConversionUtility.ConvertGameObjectHierarchy(bot.gameObject, settings);
-                var instance = entityManager.Instantiate(prefab);
-                entityManager.AddComponentData(instance, new HealthData { Value = bot.BotSettings.Health });
+                var prefab = _prefabs[Random.Range(0, _prefabs.Length)];
+                var entity = GameObjectConversionUtility.ConvertGameObjectHierarchy(prefab, settings);
+                var instance = entityManager.Instantiate(entity);
 
                 var position = Calculations.RandomPosition(_floorBounds);
                 entityManager.SetComponentData(instance, new Translation { Value = position });
