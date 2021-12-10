@@ -1,45 +1,38 @@
 using Unity.Entities;
-using Unity.Mathematics;
 using Unity.Transforms;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace UnityEcs
 {
-    public class BotMonoBehSpawner : AbstractMonoBehSpawner
+    public class BotMonoBehSpawner
     {
-        [SerializeField] private int _count = 10;
+        private int _count;
+        private BotEcs[] _prefabs;
+        private Bounds _floorBounds;
 
-        public override void Spawn()
+        public BotMonoBehSpawner(BotEcs[] prefabs, Bounds floorBounds, int count)
+        {
+            _prefabs = prefabs;
+            _floorBounds = floorBounds;
+            _count = count;
+        }
+
+        public void Spawn()
         {
             var entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
             var settings = GameObjectConversionSettings.FromWorld(World.DefaultGameObjectInjectionWorld, null);
 
             for (var i = 0; i < _count; i++)
             {
-                var entity = GameObjectConversionUtility.ConvertGameObjectHierarchy( Calculations.RandomPrefab(_prefabs), settings);
-        
-                var instance = entityManager.Instantiate(entity);
-                var position = new float3(Calculations.RandomPosition((-10, 10), (0, 0), (-10, 10)));
+                var bot = _prefabs[Random.Range(0, _prefabs.Length)];
+                var prefab = GameObjectConversionUtility.ConvertGameObjectHierarchy(bot.gameObject, settings);
+                var instance = entityManager.Instantiate(prefab);
+                entityManager.AddComponentData(instance, new HealthData { Value = bot.BotSettings.Health });
 
+                var position = Calculations.RandomPosition(_floorBounds);
                 entityManager.SetComponentData(instance, new Translation { Value = position });
             }
-        }
-    }
-
-    public struct BotData : IComponentData
-    {
-        
-    }
-
-    [DisableAutoCreation]
-    public class BotLifeSystem : SystemBase
-    {
-        protected override void OnUpdate()
-        {
-            Entities.ForEach((Entity e, ref BotData botData) =>
-            {
-                
-            }).Run();
         }
     }
 }

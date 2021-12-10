@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3075045271913402795}
   - component: {fileID: 548465455890122441}
   - component: {fileID: -7820574952628554503}
+  - component: {fileID: 758997989285075432}
   m_Layer: 0
   m_Name: CharacterCapsuleEcs
   m_TagString: Untagged
@@ -127,3 +128,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ConversionMode: 0
+--- !u!114 &758997989285075432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5656739141652547822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac8b7b760c504f9ebb5d14cc3e68e0a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _botSettings: {fileID: 11400000, guid: a77f9713271644d4aa768f6c5ea411c4, type: 2}

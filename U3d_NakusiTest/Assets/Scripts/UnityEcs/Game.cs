@@ -1,32 +1,24 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace UnityEcs
 {
-    public partial class Game : MonoBehaviour
+    public class Game : MonoBehaviour
     {
         [SerializeField] private GameSettings _settings = default;
         [SerializeField] private Transform _floor = default;
 
-        [SerializeField] private AbstractMonoBehSpawner botMonoBehSpawnerPrefab = default;
-        [SerializeField] private AbstractMonoBehSpawner bombMonoBehSpawnerPrefab = default;
-        [SerializeField] private AbstractMonoBehSpawner wallMonoBehSpawnerPrefab = default;
-
-        [SerializeField] private GameObject[] _botPrefabs = default;
-        [SerializeField] private GameObject[] _bombPrefabs = default;
+        [SerializeField] private BotEcs[] _botPrefabs = default;
+        [SerializeField] private int _botsAmount = 10;
+        [SerializeField] private BombEcs[] _bombPrefabs = default;
+        [SerializeField] private int _bombsAmount = 10;
 
         private void Start()
         {
-            //_floor.localScale = _settings.FloorExtents;
-
-            var botSpawner = Instantiate(botMonoBehSpawnerPrefab);
-            var bombSpawner = Instantiate(bombMonoBehSpawnerPrefab);
-            // var wallSpawner = Instantiate(wallMonoBehSpawnerPrefab);
-
             var floorBounds = _floor.GetComponent<Renderer>().bounds;
-            
-            botSpawner.Init(_botPrefabs, floorBounds);
-            bombSpawner.Init(_bombPrefabs, floorBounds);
+
+            var botSpawner = new BotMonoBehSpawner(_botPrefabs, floorBounds, _botsAmount);
+            var bombSpawner = new BombMonoBehSpawner(_bombPrefabs, floorBounds, _bombsAmount);
+            // var wallSpawner = Instantiate(wallMonoBehSpawnerPrefab);
 
             botSpawner.Spawn();
             bombSpawner.Spawn();
