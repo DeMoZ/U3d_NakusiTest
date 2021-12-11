@@ -4,14 +4,14 @@ using UnityEngine;
 
 namespace UnityEcs
 {
-    public class BombMonoBehSpawner
+    public class BombSpawner
     {
         private readonly int _count;
         private readonly GameObject[] _prefabs;
 
         private readonly Bounds _floorBounds;
 
-        public BombMonoBehSpawner(GameObject[] prefabs, Bounds floorBounds, int count)
+        public BombSpawner(GameObject[] prefabs, Bounds floorBounds, int count)
         {
             _prefabs = prefabs;
             _floorBounds = floorBounds;

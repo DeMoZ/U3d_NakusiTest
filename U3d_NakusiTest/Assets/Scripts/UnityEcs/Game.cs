@@ -15,8 +15,8 @@ namespace UnityEcs
         {
             var floorBounds = _floor.GetComponent<Renderer>().bounds;
 
-            var botSpawner = new BotMonoBehSpawner(_botPrefabs, floorBounds, _botsAmount);
-            var bombSpawner = new BombMonoBehSpawner(_bombPrefabs, floorBounds, _bombsAmount);
+            var botSpawner = new BotSpawner(_botPrefabs, floorBounds, _botsAmount);
+            var bombSpawner = new BombSpawner(_bombPrefabs, floorBounds, _bombsAmount);
             // var wallSpawner = Instantiate(wallMonoBehSpawnerPrefab);
 
             botSpawner.Spawn();

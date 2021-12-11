@@ -5,13 +5,13 @@ using Random = UnityEngine.Random;
 
 namespace UnityEcs
 {
-    public class BotMonoBehSpawner
+    public class BotSpawner
     {
         private int _count;
         private GameObject[] _prefabs;
         private Bounds _floorBounds;
 
-        public BotMonoBehSpawner(GameObject[] prefabs, Bounds floorBounds, int count)
+        public BotSpawner(GameObject[] prefabs, Bounds floorBounds, int count)
         {
             _prefabs = prefabs;
             _floorBounds = floorBounds;
