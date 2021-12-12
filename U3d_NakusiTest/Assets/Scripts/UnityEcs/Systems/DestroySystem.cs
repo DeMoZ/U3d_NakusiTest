@@ -3,6 +3,7 @@
 namespace UnityEcs
 {
     [UpdateAfter(typeof(LifeTimeSystem))]
+    [UpdateAfter(typeof(BoomAreaSystem))]
     public class DestroySystem : SystemBase
     {
         private EndSimulationEntityCommandBufferSystem _endSimCMB;

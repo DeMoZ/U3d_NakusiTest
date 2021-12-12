@@ -380,7 +380,7 @@ MonoBehaviour:
   _bombPrefabs:
   - {fileID: 8026346666296314038, guid: 4ef145123eaa27148b433e2f12eb5f0b, type: 3}
   - {fileID: 8026346666296314038, guid: c19d668ac00c0e749a1ad2934fb97131, type: 3}
-  _bombsAmount: 5000
+  _bombsAmount: 5
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0

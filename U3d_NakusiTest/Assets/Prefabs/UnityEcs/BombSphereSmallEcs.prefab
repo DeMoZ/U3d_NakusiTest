@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 462616479581820001}
   - component: {fileID: 2821626188644035227}
   - component: {fileID: -1503019990256026970}
+  - component: {fileID: 7884125904018284272}
   m_Layer: 0
   m_Name: BombSphereSmallEcs
   m_TagString: Untagged
@@ -140,3 +141,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Value: 3
+--- !u!114 &7884125904018284272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8026346666296314038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6245b575fc38458cb28eb58a13dd3c19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BoomArea: {fileID: 3592217781720140950, guid: 5271843752626cb41982bf5c4afdf68a, type: 3}
