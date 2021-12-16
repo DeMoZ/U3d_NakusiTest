@@ -52,4 +52,12 @@ public class Calculations
             bounds.center.y + bounds.extents.y,
             Random.Range(bounds.center.z - bounds.extents.z, bounds.center.z + bounds.extents.z));
     }
+
+    public static float3 RandomPosition()
+    {
+        return new float3(
+            Random.Range(-10, 10),
+            0,
+            Random.Range(-10, 10));
+    }
 }

@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -5387300795027647248}
   - component: {fileID: -4881456580067463167}
   - component: {fileID: 7682094896688003941}
+  - component: {fileID: 5763229153175123903}
   m_Layer: 0
   m_Name: BombSphereEcs
   m_TagString: Untagged
@@ -154,3 +155,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BoomArea: {fileID: 3423123657069126777, guid: 387d7b4a3fe373747b0bca274cb1fb40, type: 3}
+--- !u!114 &5763229153175123903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8026346666296314038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7746462d278341f6ababcd1bf1765fdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 4

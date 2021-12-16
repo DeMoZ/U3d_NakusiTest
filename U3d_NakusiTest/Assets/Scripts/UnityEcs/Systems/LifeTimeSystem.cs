@@ -8,12 +8,10 @@ namespace UnityEcs
     public class LifeTimeSystem : SystemBase
     {
         private EndSimulationEntityCommandBufferSystem _endSimCMB;
-        private EntityManager _entityManager;
 
         protected override void OnCreate()
         {
             _endSimCMB = World.GetOrCreateSystem<EndSimulationEntityCommandBufferSystem>();
-            _entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
         }
 
         protected override void OnUpdate()
@@ -32,15 +30,7 @@ namespace UnityEcs
                         commandBuffer.AddComponent(nativeThreadIndex, entity, new DestroyTag());
                     }
                 }).ScheduleParallel();
-
-            Entities
-                .WithAll<BombTag, DestroyTag>()
-                .ForEach((Entity entity, int nativeThreadIndex, in BombTag bombTag, in Translation translation) =>
-                {
-                    var instance =   commandBuffer.Instantiate( nativeThreadIndex, bombTag.BoomArea);
-                    commandBuffer.SetComponent(nativeThreadIndex ,instance, new Translation { Value = translation.Value });
-                }).ScheduleParallel();
-
+            
             _endSimCMB.AddJobHandleForProducer(Dependency);
         }
     }

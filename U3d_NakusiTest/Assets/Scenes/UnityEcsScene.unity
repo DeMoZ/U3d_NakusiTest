@@ -372,15 +372,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _floor: {fileID: 490149211}
-  _botPrefabs:
+  <BotPrefabs>k__BackingField:
   - {fileID: 5656739141652547822, guid: 33cb5feef225a52439b7b0d54076c41f, type: 3}
   - {fileID: 5547928693439657416, guid: 83c395903a070c341b080fdbf38aa5a8, type: 3}
   - {fileID: 6746323445062434480, guid: 198ccc29437453c4c96113ab87646075, type: 3}
-  _botsAmount: 10
-  _bombPrefabs:
+  <BotsAmount>k__BackingField: 10
+  <BombPrefabs>k__BackingField:
   - {fileID: 8026346666296314038, guid: 4ef145123eaa27148b433e2f12eb5f0b, type: 3}
   - {fileID: 8026346666296314038, guid: c19d668ac00c0e749a1ad2934fb97131, type: 3}
-  _bombsAmount: 5
+  <BombsAmount>k__BackingField: 10
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0

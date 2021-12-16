@@ -3,6 +3,7 @@
 namespace UnityEcs
 {
     [UpdateAfter(typeof(LifeTimeSystem))]
+    [UpdateAfter(typeof(SpawnBoomAreaSystem))]
     [UpdateAfter(typeof(BoomAreaSystem))]
     public class DestroySystem : SystemBase
     {

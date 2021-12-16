@@ -1,4 +1,5 @@
 using Unity.Entities;
+using Unity.Mathematics;
 using Unity.Transforms;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -29,7 +30,9 @@ namespace UnityEcs
                 var entity = GameObjectConversionUtility.ConvertGameObjectHierarchy(prefab, settings);
                 var instance = entityManager.Instantiate(entity);
 
-                var position = Calculations.RandomPosition(_floorBounds);
+                var prefabPosition =  prefab.transform.position;
+                var offset =new float3(prefabPosition.x,prefabPosition.y, prefabPosition.z);
+                var position = Calculations.RandomPosition(_floorBounds) + offset;
                 entityManager.SetComponentData(instance, new Translation { Value = position });
             }
         }
